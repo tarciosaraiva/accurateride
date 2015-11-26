@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Accurate Ride</string>
+    <string name="gps_wait">Waiting for GPS</string>
+    <string name="gps_locked">GPS locked. Ready to go.</string>
+    <string name="gps_started">GPS started. Waiting for lock&#8230;</string>
+    <string name="gps_stopped">GPS stopped.</string>
+
+    <string name="initial_value">0.00</string>
+    <string name="title_activity_maps">My ride</string>
+
+    <!-- component -->
+    <string name="stat_label_generic">Stat</string>
+    <string name="stat_value_generic">0.0</string>
+    <string name="stat_unit_generic">d/t</string>
+
+    <string name="stat_label_speed">Speed</string>
+    <string name="stat_label_cadence">Cadence</string>
+    <string name="stat_label_distance">Distance</string>
+    <string name="stat_label_time">Elapsed time</string>
+
+    <string name="stat_unit_mts">ms</string>
+    <string name="stat_unit_kms">kms</string>
+    <string name="stat_unit_kmh">km/h</string>
+    <string name="stat_unit_ms">m/s</string>
+
+    <string name="stat_unit_minutes">mins</string>
+</resources>

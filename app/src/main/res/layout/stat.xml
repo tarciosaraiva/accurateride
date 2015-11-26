@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/stat_component"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/statLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="center"
+            android:importantForAccessibility="yes"
+            android:includeFontPadding="false"
+            android:paddingBottom="0dp"
+            android:paddingTop="@dimen/compo_stat_element_padding"
+            android:singleLine="true"
+            android:text="@string/stat_label_generic"
+            android:textAllCaps="true"
+            android:textSize="@dimen/compo_stat_label_font" />
+
+        <TextView
+            android:id="@+id/statValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/statLabel"
+            android:elegantTextHeight="true"
+            android:gravity="center"
+            android:importantForAccessibility="yes"
+            android:includeFontPadding="false"
+            android:padding="0dp"
+            android:singleLine="true"
+            android:text="@string/stat_value_generic"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/compo_stat_value_font"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/statUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/statValue"
+            android:clickable="false"
+            android:elegantTextHeight="true"
+            android:gravity="center"
+            android:importantForAccessibility="yes"
+            android:includeFontPadding="false"
+            android:padding="0dp"
+            android:singleLine="true"
+            android:text="@string/stat_unit_generic"
+            android:textAllCaps="true"
+            android:textSize="@dimen/compo_stat_unit_font" />
+
+    </RelativeLayout>
+</merge>

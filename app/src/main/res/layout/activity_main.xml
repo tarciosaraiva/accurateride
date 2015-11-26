@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="tarcio.accurateride.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/distanceCadenceContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <tarcio.accurateride.component.StatWidget
+            android:id="@+id/statDistanceWidget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            app:statLabel="@string/stat_label_distance"
+            app:statUnit="@string/stat_unit_kms" />
+
+        <tarcio.accurateride.component.StatWidget
+            android:id="@+id/statCadenceWidget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            app:statLabel="@string/stat_label_cadence"
+            app:statUnit="@string/stat_unit_kmh" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainStatContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/actionContainer"
+        android:layout_below="@+id/distanceCadenceContainer"
+        android:orientation="vertical">
+
+        <tarcio.accurateride.component.StatWidget
+            android:id="@+id/statSpeedWidget"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            app:statLabel="@string/stat_label_speed"
+            app:statUnit="@string/stat_unit_kmh"
+            app:statValueSize="40sp" />
+
+        <tarcio.accurateride.component.StatWidget
+            android:id="@+id/statTimeWidget"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            app:statLabel="@string/stat_label_time"
+            app:statUnit="@string/stat_unit_minutes"
+            app:statValueSize="30sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/actionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtProviderStatus">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Stop" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Record" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtProviderStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="@dimen/activity_vertical_margin"
+        android:text="@string/gps_wait"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+</RelativeLayout>
