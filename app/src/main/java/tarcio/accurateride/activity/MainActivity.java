@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         locationStatWidget = (LocationStatWidget) findViewById(R.id.locationStatWidget);
         statDistance = (StatWidget) findViewById(R.id.statDistanceWidget);
+        statCadence = (StatWidget) findViewById(R.id.statCadenceWidget);
         statSpeed = (StatWidget) findViewById(R.id.statSpeedWidget);
         statElapsedTime = (StatWidget) findViewById(R.id.statTimeWidget);
     }
@@ -105,11 +106,25 @@ public class MainActivity extends AppCompatActivity {
                             locationStatWidget.displayData();
                             locationStatWidget.setStatisticalData(gps, network, location.getAccuracy(), location.getAltitude());
                             setSpeedStat(location.getSpeed());
+                            setCadenceStat(location.getSpeed());
                         }
                     });
                 }
             }
         });
+    }
+
+    private void setCadenceStat(float speed) {
+        double wheelCircumference = 700 * Math.PI;
+        double gearRatio = 50 * 34;
+        double development = (gearRatio * wheelCircumference) / 1000;
+        double cadence = speed / development;
+
+        statCadence.setValueText(formatCadence(cadence));
+    }
+
+    private String formatCadence(double cadence) {
+        return String.format("%d", (int) cadence);
     }
 
     public void recordActivity(View view) {
