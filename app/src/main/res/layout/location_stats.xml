@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtProviderStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="@string/gps_wait"
+            android:textSize="@dimen/compo_stat_location_font" />
+
+        <LinearLayout
+            android:id="@+id/statLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtProviderStatus"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:contentDescription="@string/gps_status"
+                android:scaleType="centerInside"
+                android:src="@drawable/gps" />
+
+            <TextView
+                android:id="@+id/txtGpsStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:text="@string/status_ok"
+                android:textSize="@dimen/compo_stat_location_font" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:contentDescription="@string/network_status"
+                android:scaleType="centerInside"
+                android:src="@drawable/network" />
+
+            <TextView
+                android:id="@+id/txtNetworkStatus"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"
+                android:gravity="center"
+                android:text="@string/status_nok"
+                android:textSize="@dimen/compo_stat_location_font" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.125"
+                android:contentDescription="@string/accuracy_in_meters"
+                android:scaleType="centerInside"
+                android:src="@drawable/accuracy" />
+
+            <TextView
+                android:id="@+id/txtAccuracy"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.175"
+                android:gravity="center"
+                android:text="a"
+                android:textSize="@dimen/compo_stat_location_font" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.125"
+                android:contentDescription="@string/altitude_in_meters"
+                android:scaleType="centerInside"
+                android:src="@drawable/altitude" />
+
+            <TextView
+                android:id="@+id/txtAltitude"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.175"
+                android:gravity="center"
+                android:text="a"
+                android:textSize="@dimen/compo_stat_location_font" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</merge>

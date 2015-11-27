@@ -24,4 +24,10 @@
     <string name="stat_unit_ms">m/s</string>
 
     <string name="stat_unit_minutes">mins</string>
+    <string name="gps_status">GPS status</string>
+    <string name="status_ok">OK</string>
+    <string name="status_nok">NOK</string>
+    <string name="network_status">Network status</string>
+    <string name="accuracy_in_meters">Accuracy in meters</string>
+    <string name="altitude_in_meters">Altitude in meters</string>
 </resources>

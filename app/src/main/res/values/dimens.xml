@@ -7,4 +7,5 @@
     <dimen name="compo_stat_value_font">60sp</dimen>
     <dimen name="compo_stat_label_font">14sp</dimen>
     <dimen name="compo_stat_unit_font">10sp</dimen>
+    <dimen name="compo_stat_location_font">12sp</dimen>
 </resources>

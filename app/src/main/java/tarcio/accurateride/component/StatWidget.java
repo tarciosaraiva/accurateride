@@ -69,7 +69,7 @@ public class StatWidget extends RelativeLayout {
         this.txtStatLabel.setText(labelText);
     }
 
-    private void setValueText(String valueText) {
+    public void setValueText(String valueText) {
         this.txtStatValue.setText(valueText);
     }
 
