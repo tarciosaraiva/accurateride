@@ -1,4 +1,4 @@
-package tarcio.accurateride.io;
+package tarcio.accurateride.service;
 
 import android.location.Location;
 import android.util.Log;
@@ -17,11 +17,11 @@ import tarcio.accurateride.model.AccurateLocation;
 import tarcio.accurateride.model.AccurateLocations;
 import tarcio.accurateride.model.adapters.DateAdapter;
 
-public class LocationsData {
+public class LocationService {
 
     public static final String DATA_FILE = "location_data";
 
-    private static final String TAG = "LocationsData";
+    private static final String TAG = "LocationService";
     private static final Moshi MOSHI = new Moshi.Builder().add(new DateAdapter()).build();
 
     private List<AccurateLocation> accurateLocationCache;
@@ -29,7 +29,7 @@ public class LocationsData {
     private File dataFile;
     private float distance;
 
-    public LocationsData(File file) {
+    public LocationService(File file) {
         dataFile = file;
         accurateLocationCache = new ArrayList<>();
         adapter = MOSHI.adapter(AccurateLocations.class);
