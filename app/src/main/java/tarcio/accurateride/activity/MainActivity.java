@@ -1,9 +1,11 @@
 package tarcio.accurateride.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +24,7 @@ import rx.functions.Action1;
 import tarcio.accurateride.R;
 import tarcio.accurateride.component.LocationStatWidget;
 import tarcio.accurateride.component.StatWidget;
-import tarcio.accurateride.io.LocationsData;
+import tarcio.accurateride.service.LocationService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private Subscription timerSubscription;
     private Subscription writerSubscription;
 
-    private LocationsData locationsData;
+    private LocationService locationService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +64,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_main);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         initViews();
 
-        locationsData = new LocationsData(getFileStreamPath(LocationsData.DATA_FILE));
+        locationService = new LocationService(getFileStreamPath(LocationService.DATA_FILE));
     }
 
     @Override
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 final boolean network = smartLocation.location().state().isNetworkAvailable();
 
                 if (isRecording) {
-                    locationsData.addToCache(location);
+                    locationService.addToCache(location);
                 }
 
                 if (gps && network) {
@@ -127,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
         return String.format("%d", (int) cadence);
     }
 
+    public void openSettings(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
     public void recordActivity(View view) {
         isRecording = true;
         timerSubscription = Observable.interval(1, TimeUnit.SECONDS).subscribe(new Action1<Long>() {
@@ -149,23 +157,14 @@ public class MainActivity extends AppCompatActivity {
                 .doOnUnsubscribe(new Action0() {
                     @Override
                     public void call() {
+                        persistCacheAndUpdateUI();
                     }
                 });
 
         writerSubscription = observable.subscribe(new Action1<Long>() {
             @Override
             public void call(final Long minute) {
-                locationsData.persistAndClearCache();
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        statDistance.setValueText(formatSpeed(locationsData.getDistance()));
-                    }
-                });
-            }
-
-            private String formatSpeed(float distance) {
-                return String.format("%.2f", distance);
+                persistCacheAndUpdateUI();
             }
         });
     }
@@ -174,6 +173,20 @@ public class MainActivity extends AppCompatActivity {
         isRecording = false;
         timerSubscription.unsubscribe();
         writerSubscription.unsubscribe();
+    }
+
+    private void persistCacheAndUpdateUI() {
+        locationService.persistAndClearCache();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                statDistance.setValueText(formatSpeed(locationService.getDistance()));
+            }
+        });
+    }
+
+    private String formatSpeed(float distance) {
+        return String.format("%.2f", distance);
     }
 
     private void setSpeedStat(float speed) {

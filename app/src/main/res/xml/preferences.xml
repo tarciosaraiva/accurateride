@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:defaultValue="@string/pref_unit_value_default"
+        android:dialogTitle="@string/pref_unit_of_measure_title"
+        android:entries="@array/pref_unit_entries"
+        android:entryValues="@array/pref_unit_values"
+        android:key="pref_unit"
+        android:title="@string/pref_unit_of_measure_title" />
+
+    <PreferenceCategory
+        android:title="Your bicycle"
+        android:key="pref_your_bicyle_settings">
+
+        <EditTextPreference
+            android:key="pref_wheel_size"
+            android:title="@string/pref_wheel_size_title"
+            android:dialogTitle="@string/pref_wheel_size_title"
+            android:defaultValue="700"
+            android:hint="@string/pref_wheel_size_hint"/>
+
+        <EditTextPreference
+            android:key="pref_chainring"
+            android:title="@string/pref_chainring_title"
+            android:dialogTitle="@string/pref_chainring_title"
+            android:defaultValue="50"
+            android:hint="@string/pref_chainring_hint"/>
+
+        <EditTextPreference
+            android:key="pref_cog"
+            android:title="@string/pref_cog_title"
+            android:dialogTitle="@string/pref_cog_title"
+            android:defaultValue="34"
+            android:hint="@string/pref_cog_hint"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

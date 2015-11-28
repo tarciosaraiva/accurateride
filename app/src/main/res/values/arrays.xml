@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_unit_entries">
+        <item>m/s</item>
+        <item>km/h</item>
+    </string-array>
+    <string-array name="pref_unit_values">
+        <item>ms</item>
+        <item>kmh</item>
+    </string-array>
+</resources>

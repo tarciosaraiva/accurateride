@@ -72,19 +72,28 @@
         android:layout_above="@+id/locationStatWidget">
 
         <Button
+            android:id="@+id/btnSettings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.3"
+            android:onClick="openSettings"
+            android:text="@string/btn_settings_text" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.35"
             android:onClick="stopRecording"
-            android:text="Stop" />
+            android:text="@string/btn_stop_text" />
 
         <Button
             android:id="@+id/btnRecord"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_weight="0.35"
             android:onClick="recordActivity"
-            android:text="Record" />
+            android:text="@string/btn_record_text" />
+
     </LinearLayout>
 
     <tarcio.accurateride.component.LocationStatWidget
