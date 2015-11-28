@@ -30,7 +30,7 @@
     <string name="network_status">Network status</string>
     <string name="accuracy_in_meters">Accuracy in meters</string>
     <string name="altitude_in_meters">Altitude in meters</string>
-    <string name="pref_unit_value_default">kmh</string>
+    <string name="pref_unit_value_default">km/h</string>
     <string name="pref_unit_of_measure_title">Unit of measure</string>
     <string name="pref_wheel_size_title">Wheel size</string>
     <string name="pref_wheel_size_hint">Enter the wheel size</string>
@@ -100,4 +100,8 @@
     <string name="btn_settings_text">Settings</string>
     <string name="btn_stop_text">Stop</string>
     <string name="btn_record_text">Record</string>
+    <string name="pref_unit_summary">Current unit of measure is</string>
+    <string name="pref_wheel_size_summary">Current wheel size is</string>
+    <string name="pref_chainring_summary">Current chainring on your crankset is</string>
+    <string name="pref_cog_summary">Current cog on your crankset is</string>
 </resources>

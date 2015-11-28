@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListPreference
+    <tarcio.accurateride.preferences.ListPreferenceWithSummaryValue
         android:defaultValue="@string/pref_unit_value_default"
         android:dialogTitle="@string/pref_unit_of_measure_title"
         android:entries="@array/pref_unit_entries"
         android:entryValues="@array/pref_unit_values"
         android:key="pref_unit"
+        android:summary="@string/pref_unit_summary"
         android:title="@string/pref_unit_of_measure_title" />
 
     <PreferenceCategory
-        android:title="Your bicycle"
-        android:key="pref_your_bicyle_settings">
+        android:key="pref_your_bicyle_settings"
+        android:title="Your bicycle">
 
-        <EditTextPreference
-            android:key="pref_wheel_size"
-            android:title="@string/pref_wheel_size_title"
-            android:dialogTitle="@string/pref_wheel_size_title"
+        <tarcio.accurateride.preferences.EditTextPreferenceWithSummaryValue
             android:defaultValue="700"
-            android:hint="@string/pref_wheel_size_hint"/>
+            android:dialogTitle="@string/pref_wheel_size_title"
+            android:hint="@string/pref_wheel_size_hint"
+            android:key="pref_wheel_size"
+            android:summary="@string/pref_wheel_size_summary"
+            android:title="@string/pref_wheel_size_title" />
 
-        <EditTextPreference
-            android:key="pref_chainring"
-            android:title="@string/pref_chainring_title"
-            android:dialogTitle="@string/pref_chainring_title"
+        <tarcio.accurateride.preferences.EditTextPreferenceWithSummaryValue
             android:defaultValue="50"
-            android:hint="@string/pref_chainring_hint"/>
+            android:dialogTitle="@string/pref_chainring_title"
+            android:hint="@string/pref_chainring_hint"
+            android:key="pref_chainring"
+            android:summary="@string/pref_chainring_summary"
+            android:title="@string/pref_chainring_title" />
 
-        <EditTextPreference
-            android:key="pref_cog"
-            android:title="@string/pref_cog_title"
-            android:dialogTitle="@string/pref_cog_title"
+        <tarcio.accurateride.preferences.EditTextPreferenceWithSummaryValue
             android:defaultValue="34"
-            android:hint="@string/pref_cog_hint"/>
+            android:dialogTitle="@string/pref_cog_title"
+            android:hint="@string/pref_cog_hint"
+            android:key="pref_cog"
+            android:summary="@string/pref_cog_summary"
+            android:title="@string/pref_cog_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>
