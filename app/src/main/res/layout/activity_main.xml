@@ -32,7 +32,7 @@
             android:layout_weight="0.5"
             android:gravity="center"
             app:statLabel="@string/stat_label_cadence"
-            app:statUnit="@string/stat_unit_kmh" />
+            app:statUnit="@string/stat_unit_rpm" />
     </LinearLayout>
 
     <LinearLayout
